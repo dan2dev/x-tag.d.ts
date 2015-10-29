@@ -1,12 +1,18 @@
-// DefinitelyTyped  by Danilo C Castro
+// DefinitelyTyped by Danilo C Castro
+// Type definitions for x-tag 1.0
 // https://x-tag.readme.io/docs
+// Version: xtag.d.js v0.0.2 2015-10-29
+// The MIT License (MIT)
+// github: https://github.com/danilodeven/xtag.d.ts
+// follow me: https://twitter.com/danilodeven
+
 
 declare module xtag {
 	interface ILifecycle {
-		created?: () => void;
-		inserted?: () => void;
-		removed?: () => void;
-		attributeChanged?: (attrName: string, oldValue: any, newValue: any) => void;
+		created?: Function;
+		inserted?: Function;
+		removed?: Function;
+		attributeChanged?: (attrName: string, oldValue: any, newValue: any) => Function;
 	}
 	interface IAccessors {
 		attribute?: { name?: string };
@@ -16,11 +22,11 @@ declare module xtag {
 	interface IDefinition {
 		content?: string;
 		lifecycle?: ILifecycle;
-		events: { [name: string]: (...args: any[]) => void; }; // TODO: check args
-		accessors: { [name: string]: IAccessors; };
-		methods: { [name: string]: (...args: any[]) => void; }
+		events?: { [name: string]: (event: Event) => void; };
+		accessors?: { [name: string]: IAccessors; };
+		methods?: { [name: string]: (...args: any[]) => void; }
 	}
-	export var register: (name: string, definition: IDefinition) => void;
+	export var register: (name: string, definition: IDefinition) => void; 
 	export var query: (element: Element, selector: string) => any[];
 	export var toArray: (element: Element ) => Element[];
 	export var typeOf: (object: Object) => string;

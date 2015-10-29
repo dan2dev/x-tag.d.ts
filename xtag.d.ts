@@ -3,7 +3,7 @@
 // https://x-tag.readme.io/docs
 // Version: xtag.d.js v0.0.2 2015-10-29
 // The MIT License (MIT)
-// github: https://github.com/danilodeven/xtag.d.ts
+// github: https://github.com/danilodeven/x-tag.d.ts
 // follow me: https://twitter.com/danilodeven
 
 
